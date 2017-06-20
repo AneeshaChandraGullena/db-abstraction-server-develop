@@ -1,0 +1,15 @@
+### © Copyright 2017 IBM Corp. All Rights Reserved Licensed Materials - Property of IBM ###
+FROM centos:6
+
+ADD . ../manifest-runtime-release
+RUN yum upgrade -y 
+RUN yum install make -y
+RUN yum install gcc-c++ -y
+RUN yum install git -y
+RUN yum install gawk -y
+RUN yum install rpm-build -y
+RUN yum install iputils -y
+RUN manifest-runtime-release/tests/installCoreutils
+RUN ["chmod", "+x", "manifest-runtime-release/tests/makescript.sh"]
+
+ENTRYPOINT ["manifest-runtime-release/tests/makescript.sh"]

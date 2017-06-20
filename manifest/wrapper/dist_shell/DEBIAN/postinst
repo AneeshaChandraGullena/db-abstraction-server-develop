@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+if [ "$1" = "configure" ]; then
+  if [ -d /usr/doc -a ! -e /usr/doc/manifest-runtime-release -a -d /usr/share/doc/manifest-runtime-release ]; then
+    ln -sf ../share/doc/manifest-runtime-release /usr/doc/manifest-runtime-release
+  fi
+fi
+
+echo "Calling ldconfig to update cache and install shared library..."
+ldconfig

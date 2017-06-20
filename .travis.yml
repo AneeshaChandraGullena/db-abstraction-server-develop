@@ -1,0 +1,60 @@
+group: bluezone
+sudo: required
+dist: trusty
+language: go
+
+go:
+  - 1.6
+
+env:
+# set environment variable(s) for the service manifest
+  - CRN_NAME=bluemix
+
+install:
+  # install Glide
+  - go get github.com/Masterminds/glide
+  # Install golint
+  - go get -u github.com/golang/lint/golint
+  # Install security static analyzer
+  - go get github.com/HewlettPackard/gas
+  #install pre-reqs for the service manifest tool
+  - sudo apt-get install fakeroot -y
+  - sudo apt-get install lintian -y
+
+# leave blank to prevent go get -u ./... and use glide instead
+before_script:
+    - go get github.com/pierrre/gotestcover
+script:
+  # Set config path
+  - export CONFIG_PATH=$(pwd)/config
+  # Set test MARIA_CREDENTIALS_LOCATION
+  - export MARIA_CREDENTIALS_LOCATION=$CONFIG_PATH/keyprotect_db.json
+  # update deps
+  - glide update
+  # replaces go get -u ./...
+  - glide install
+  # Run GoLint
+  - golint $(glide novendor)
+  # Vet source code and report
+  - go vet -x $(glide novendor)
+  # Run the unit tests suite
+  - $GOPATH/bin/gotestcover -v -race -coverprofile=cover.out $(go list ./... | grep -v /vendor/ | grep -v scripts)
+  # Run Test Coverage
+  - go tool cover -html=cover.out -o=cover.html || echo
+  # Run Security Scan
+  - set -o pipefail && gas -skip=*/vendor/* -skip=*_test.go ./... 2>&1 | grep -v 'skipping\|scanning'
+  # pull manifest tool code
+  - git config user.email kmstage@us.ibm.com
+  - git config user.name kmstage
+  - git stash
+  - git remote add manifest-runtime-production git@github.ibm.com:CloudTools/manifest-runtime-production.git
+  - git subtree pull --prefix=manifest manifest-runtime-production master -m "Update manifest-runtime" --squash
+  # build manifest tool
+  - cd manifest
+  - make validate
+  - make package
+  - cd ..
+
+after_success:
+    - ./scripts/calculateCoverage.sh
+    - ./scripts/publishCoverage.sh

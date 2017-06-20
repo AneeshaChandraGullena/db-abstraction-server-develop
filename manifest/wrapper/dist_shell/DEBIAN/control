@@ -1,0 +1,10 @@
+Package: libibmmanifest1
+Version: 1.0.0
+Architecture: amd64
+Maintainer: Cloud Tools Team <ctoal@ca.ibm.com>
+Depends: libc6
+Section: misc
+Priority: optional
+Description: Runtime Service Manifest Reflection
+ Reflects Key IBM Cloud Service Component Metadata 
+ to run time introspection tools

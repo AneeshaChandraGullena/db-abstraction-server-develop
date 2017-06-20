@@ -1,0 +1,46 @@
+{
+    "csvDir": "kp-csv/",
+    "host": {
+        "name": "DB abstraction server",
+        "ipv4_address": "127.0.0.1",
+        "port": 8985
+    },
+    "openstack": {
+        "barbican": {
+            "url": "https://localhost:9311"
+        }
+    },
+    "database":{
+      "credentialsLocation" : "/opt/keyprotect/config/keyprotect_db.json",
+      "table" : "keyprotect_ids"
+    },
+    "version": {
+        "semver": "99.99.99",
+        "commit": "123456789",
+        "runtime": ""
+    },
+    "timeouts":{
+      "grpcTimeout" : 30
+    },
+    "keyManager": {
+        "name": "Key Manager gRPC service",
+        "ipv4_address": "keyprotect_lifecycle",
+        "port": 8942
+    },
+    "feature_toggles": {
+      "encrypt_metadata": false,
+      "orders" : true,
+      "enableTLS": false
+    },
+    "metadata": {
+      "file": "/kp_data/config/prestage-metadata.txt",
+      "info": ""
+    },
+    "certs": {
+      "base_path": "/kp_data/config",
+      "ca_cert_pem": "ca-cert.pem",
+      "client_cert_pem": "client-cert.pem",
+      "client_key_pem": "client-key.pem",
+      "server_name": "MariaDB server"
+    }
+}

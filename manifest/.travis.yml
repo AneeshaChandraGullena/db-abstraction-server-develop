@@ -1,0 +1,21 @@
+sudo: required
+
+env:
+  matrix:
+  - OS_TYPE=ubuntu14  OS_VERSION=14.04
+  - OS_TYPE=ubuntu16  OS_VERSION=16.04
+  - OS_TYPE=centos6   OS_VERSION=8
+  - OS_TYPE=centos7   OS_VERSION=0
+
+services:
+  - docker
+
+language: cpp
+
+compiler:
+  - g++
+
+before_script:
+
+script:
+  - echo "$OS_TYPE";

@@ -1,0 +1,30 @@
+{
+    "manifest_version": "1.0.0.0",
+    "service_name": "<<Your Catalog Service Name>>",
+    "component_name": "<<Your Component Name>>",
+    "cname": "<<one of: bluemix/internal/staging/{customerId for dedicated/local}>>",
+    "ctype": "<<one of: public/dedicated/local>>",
+    "component_instance": "<<Your component instance identifier>>",
+    "scope": "<<Your component instance scope identifier>>",
+    "region": "<<Your component instance region identifier>>",
+    "resource_type" : "<<Your Resource Type identifier>>",
+    "resource" : "<<Your Resource Id identifier>>",
+
+    "tenancy" : "<<Your Tenancy model - one of single/shared>>",
+    "pager_duty" : "<<Your PD Escalation Policy URL>>",
+    "team_email" : "<<Your Team E-mail Alias>>",
+    "bailey_url" : "<<Bailey URL>>",
+    "bailey_project" : "<<Bailey Project Name>>",
+    "repo_url" : "<<GHE Repo URL>>",
+
+    "softlayer_account": "<<The account for SL resources provisioned to this component if applicable>>",
+    "softlayer_account_api_key_id": "RESERVED FOR FUTURE USE",
+    "bluemix_account": "<<The Bluemix Account for resources provisioned to this component if applicable>>",
+    "bluemix_account_api_key_id": "RESERVED FOR FUTURE USE",
+
+    "security_status_url": "<<URL for your Security Posture Status Page>>",
+    "static_sec_analyze_url": "<<URL for the current results of your static analysis security scan>>",
+    "customer_ticket_repo_url": "<<URL to your Customer Tickets Repository>>",
+    "runbook_repo_url": "<<URL For your Runbook repository for this component>>",
+    "continuity_plan_url" : "<<URL For your Business Continuity Plan for this component or the whole service>>"
+}

@@ -1,0 +1,80 @@
+package: github.ibm.com/Alchemy-Key-Protect/db-abstraction-server
+import:
+- package: github.com/go-kit/kit
+  vcs: git
+  version: 0.2.0
+  repo: https://github.com/go-kit/kit.git
+  subpackages:
+  - circuitbreaker
+  - endpoint
+  - log
+  - metrics
+  - transport/grpc
+- package: github.com/spf13/viper
+  vcs: git
+  version: 346299ea79e446ebdddb834371ceba2e5926b732
+  repo: https://github.com/spf13/viper.git
+- package: github.com/spf13/cobra
+  vcs: git
+  version: 8e9c5e77ebd49acf62aa528890fc7601040ad08d
+  repo: https://github.com/spf13/cobra.git
+# Do not remove kp-go-http. It is for dependency from other packages
+- package: github.ibm.com/Alchemy-Key-Protect/kp-go-http
+  vcs: git
+  version: release
+  repo: git@github.ibm.com:Alchemy-Key-Protect/kp-go-http.git
+  subpackages:
+  - MIME
+  - headers
+- package: github.ibm.com/Alchemy-Key-Protect/go-db-service
+  vcs: git
+  version: release
+  repo: git@github.ibm.com:Alchemy-Key-Protect/go-db-service.git
+- package: github.ibm.com/Alchemy-Key-Protect/barbican-go-client
+  vcs: git
+  version: release
+  repo: git@github.ibm.com:Alchemy-Key-Protect/barbican-go-client.git
+- package: github.com/go-sql-driver/mysql
+  vcs: git
+  version: 1.2.0
+  repo: https://github.com/go-sql-driver/mysql.git
+- package: github.com/satori/go.uuid
+  vcs: git
+  version: 1.1.0
+  repo: https://github.com/satori/go.uuid.git
+- package: github.ibm.com/Alchemy-Key-Protect/kp-go-config
+  vcs: git
+  version: release
+  repo: git@github.ibm.com:Alchemy-Key-Protect/kp-go-config.git
+- package: github.ibm.com/Alchemy-Key-Protect/kp-go-consts
+  version: release
+  repo: git@github.ibm.com:Alchemy-Key-Protect/kp-go-consts.git
+  vcs: git
+- package: github.ibm.com/Alchemy-Key-Protect/protobuffer-go-spec
+  vcs: git
+  version: release
+  repo: git@github.ibm.com:Alchemy-Key-Protect/protobuffer-go-spec.git
+  subpackages:
+  - dbManagement
+- package: github.ibm.com/Alchemy-Key-Protect/kp-go-models
+  vcs: git
+  version: release
+  repo: git@github.ibm.com:Alchemy-Key-Protect/kp-go-models.git
+- package: golang.org/x/net
+  subpackages:
+  - context
+- package: gopkg.in/yaml.v2
+  version: 31c299268d302dd0aa9a0dcf765a3d58971ac83f
+  repo: https://github.com/go-yaml/yaml.git
+- package: google.golang.org/grpc
+  vcs: git
+  version: 1.0.0
+  repo: https://github.com/grpc/grpc-go.git
+- package: github.com/pkg/sftp
+  version: a71e8f580e3b622ebff585309160b1cc549ef4d2
+- package: github.com/kr/fs
+  version: 2788f0dbd16903de03cb8186e5c7d97b69ad387b
+- package: golang.org/x/crypto
+  version: 351dc6a5bf92a5f2ae22fadeee08eb6a45aa2d93
+- package: github.com/pkg/errors
+  version: 17b591df37844cde689f4d5813e5cea0927d8dd2

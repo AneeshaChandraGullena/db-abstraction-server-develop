@@ -1,0 +1,11 @@
+### © Copyright 2017 IBM Corp. All Rights Reserved Licensed Materials - Property of IBM ###
+FROM ubuntu:14.04
+
+ADD . ../manifest-runtime-release
+RUN apt-get update -y; apt-get upgrade -y;
+RUN apt-get install make -y; apt-get install g++ -y;
+RUN apt-get install -y iputils-ping; apt-get install fakeroot -y; apt-get install lintian -y;
+RUN apt-get install git; apt-get install gawk -y; apt-get install cpio -y;
+RUN ["chmod", "+x", "manifest-runtime-release/tests/makescript.sh"]
+
+ENTRYPOINT ["manifest-runtime-release/tests/makescript.sh"]

@@ -1,0 +1,7 @@
+{
+  "Host": "10.140.107.121:3306",
+  "User": "barbican",
+  "Passwd": "barbican_mysql_password",
+  "Name": "barbican",
+  "Table": "keyprotect_spaces"
+}

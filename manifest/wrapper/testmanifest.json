@@ -1,0 +1,30 @@
+{
+    "manifest_version": "1.0.0.0",
+    "service_name": "dummy-valid-service-name-for-testing-only",
+    "component_name": "dummy-valid-component-name-for-testing-only",
+    "cname": "bluemix",
+    "ctype": "public",
+    "component_instance": "valid-instance-id",
+    "scope": "o/12345678-1234-1234-1234-123456789abc",
+    "region": "XXX99",
+    "resource_type" : "valid-resource-type-id",
+    "resource" : "valid-resource-id",
+
+    "tenancy" : "single",
+    "pager_duty" : "https://pagerdutyhost.com/path",
+    "team_email" : "someone@somewhere.com",
+    "bailey_url" : "https://baileyhost.com/path",
+    "bailey_project" : "valid-bailey-project-name",
+    "repo_url" : "https://githost.com/path",
+
+    "softlayer_account": "valid-softlayer-account",
+    "softlayer_account_api_key_id": "RESERVED FOR FUTURE USE",
+    "bluemix_account": "valid-bluemix-account-name@somewhere.com",
+    "bluemix_account_api_key_id": "RESERVED FOR FUTURE USE",
+
+    "security_status_url": "https://secuirtystatushost.com/path",
+    "static_sec_analyze_url": "https://securityanalyzehost.com/path",
+    "customer_ticket_repo_url": "https://tickethost.com/path",
+    "runbook_repo_url": "https://runbookhost.com/path",
+    "continuity_plan_url" : "https://continuityhost.com/path"
+}
